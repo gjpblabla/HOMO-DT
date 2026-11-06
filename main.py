@@ -10,7 +10,7 @@ class Solution:
                 ans.append(['.' * c + 'Q' + (n-1-c) * '.' for c in queen])
                 return 
             for c, yes in enumerate(col):
-                if not yes and not dig1[r-c] and not dig2[r+c]:
+                if not yes and not dig1[r+c] and not dig2[r-c]:
                     queen[r] = c
                     col[c] = dig1[r-c] = dig2[r+c] = True
                     dfs(r+1)
